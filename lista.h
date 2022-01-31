@@ -4,7 +4,7 @@ void Inserir(int matricula, char nome[40], float nota);
 
 void Retirar(char nome_procurado[40]);
 
-void Consultar();
+void Consultar(char nome_procurado[40]);
 
 void MostrarTudo();
 

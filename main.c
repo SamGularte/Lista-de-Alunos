@@ -18,8 +18,9 @@ int main()
         printf("**********OPCOES************\n");
         printf("1 - Criar aluno\n");
         printf("2 - Remover Aluno da lista\n");
-        printf("3 - Imprimir alunos na tela\n");
-        printf("4 - sair\n");
+        printf("3 - Consultar Aluno da lista\n");
+        printf("4 - Imprimir alunos na tela\n");
+        printf("5 - sair\n");
         printf("digite sua escolha: ");
         scanf("%i", &opcao);
         fflush(stdin);
@@ -43,18 +44,26 @@ int main()
             break;
 
         case 2:
-        	printf("Digite o nome do aluno: ");
+        	printf("Digite o nome do aluno que deseja remover: ");
             fgets(nome, 40, stdin);
         	fflush(stdin);
         	Retirar(nome);
         	printf("\n");
             break;
-
+            
         case 3:
-        	MostrarTudo();
+        	printf("Digite o nome do aluno que deseja consultar: ");
+            fgets(nome, 40, stdin);
+        	fflush(stdin);
+        	Consultar(nome);
+        	printf("\n");
             break;
 
         case 4:
+        	MostrarTudo();
+            break;
+
+        case 5:
         	printf("\n");
             printf("Programa encerrado!!");
             break;
@@ -65,7 +74,7 @@ int main()
             printf("\n");
             break;
         }
-    } while (opcao != 4);
+    } while (opcao != 5);
     
     return 0;
 }

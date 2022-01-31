@@ -30,8 +30,8 @@ void MostrarAluno(Aluno *aux)
 {
 	printf("******************************\n");
 	printf("matricula: %i\n", aux->matricula);
-	printf("nome: %s\n", aux->nome);
-	printf("nome: %.1f\n", aux->nota);
+	printf("nome: %s", aux->nome);
+	printf("nota: %.1f\n", aux->nota);
 	printf("\n");	
 }
 

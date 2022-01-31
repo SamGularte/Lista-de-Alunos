@@ -103,6 +103,43 @@ void Retirar(char nome_procurado[40])
 	}
 }
 
+void Consultar(char nome_procurado[40])
+{
+	if(inicio->content == NULL)
+	{
+		printf("Nao tem alunos na lista!\n");		
+	}
+	else
+	{
+		T_Nodo *aux = NULL;
+		aux = inicio;
+		int verificador = 0;
+		verificador = ChacarAlfa2(inicio->content, nome_procurado);
+		if(verificador == 0)
+		{
+			printf("\n");
+			MostrarAluno(inicio->content);
+			return;	
+		}
+		while(aux->content != NULL)
+		{
+			verificador = ChacarAlfa2(aux->content, nome_procurado);
+			if(verificador == 0)
+			{
+				printf("\n");
+				MostrarAluno(aux->content);
+				return;	
+			}
+			aux = aux->next;
+			if(aux == NULL)
+			{
+				printf("Aluno inexistente!\n");
+				return;		
+			}
+		}
+	}
+}
+
 void MostrarTudo()
 {
 	if(inicio == NULL)
